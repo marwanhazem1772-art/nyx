@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f5f7;
+  --foreground: #050507;
+  --near-black: #0b0d12;
+  --electric-blue: #2143ff;
+  --muted-gray: #9ca3af;
+  --border-gray: rgba(255, 255, 255, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space-grotesk);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.nyx-bg-render {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nyx-bg-render--dark {
+  background-image:
+    linear-gradient(120deg, rgba(5, 5, 7, 0.94), rgba(5, 5, 7, 0.78)),
+    url("/nyx-bg-dark.svg");
+}
+
+.nyx-bg-render--light {
+  background-image:
+    linear-gradient(120deg, rgba(244, 245, 247, 0.92), rgba(244, 245, 247, 0.85)),
+    url("/nyx-bg-light.svg");
+}
+
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent);
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.hero-glow--one {
+  left: -120px;
+  top: 85px;
+  height: 250px;
+  width: 250px;
+  background: radial-gradient(circle at center, rgba(18, 52, 255, 0.34), transparent 68%);
+}
+
+.hero-glow--two {
+  right: 120px;
+  top: 190px;
+  height: 220px;
+  width: 220px;
+  background: radial-gradient(circle at center, rgba(56, 77, 190, 0.28), transparent 70%);
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(12px);
+}
+
+.nyx-orbit-shell {
+  position: relative;
+  border-radius: 999px;
+  animation: orbitDrift 12s ease-in-out infinite;
+}
+
+.nyx-orbit-shell--inverse .nyx-orbit-core {
+  background: radial-gradient(circle at 35% 35%, #f7f8fc 0%, #b8becf 45%, #5e6370 100%);
+}
+
+.nyx-orbit-ring,
+.nyx-orbit-axis {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.nyx-orbit-ring {
+  border: 1px solid rgba(74, 101, 255, 0.6);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nyx-orbit-ring--outer {
+  width: 100%;
+  height: 100%;
+  animation: ringRotate 26s linear infinite;
+}
+
+.nyx-orbit-ring--middle {
+  width: 76%;
+  height: 76%;
+  opacity: 0.7;
+  animation: ringRotateReverse 20s linear infinite;
+}
+
+.nyx-orbit-ring--inner {
+  width: 51%;
+  height: 51%;
+  opacity: 0.65;
+  animation: ringRotate 14s linear infinite;
+}
+
+.nyx-orbit-axis {
+  left: 50%;
+  top: 50%;
+  background: linear-gradient(90deg, transparent, rgba(100, 122, 255, 0.55), transparent);
+}
+
+.nyx-orbit-axis--h {
+  width: 126%;
+  height: 1px;
+  transform: translate(-50%, -50%);
+}
+
+.nyx-orbit-axis--v {
+  width: 1px;
+  height: 126%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, transparent, rgba(100, 122, 255, 0.55), transparent);
+}
+
+.nyx-orbit-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 38%;
+  width: 38%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: radial-gradient(circle at 35% 35%, #e9ebf7 0%, #9ea7c1 42%, #454b5c 100%);
+  box-shadow:
+    inset -10px -8px 20px rgba(15, 20, 40, 0.35),
+    0 0 32px rgba(48, 78, 255, 0.35);
+}
+
+.metal-orb {
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 31% 32%, #f8f8fb 0%, #c4c7d0 24%, #8e93a1 47%, #333946 74%, #11141f 100%),
+    radial-gradient(circle at 72% 64%, rgba(18, 44, 255, 0.75), transparent 44%);
+  box-shadow:
+    inset -30px -28px 48px rgba(9, 10, 14, 0.55),
+    0 35px 80px rgba(0, 0, 0, 0.55);
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(117, 136, 255, 0.5), transparent);
+}
+
+.surface-transition::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+.reveal-up {
+  animation: revealUp 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 90ms;
+}
+
+.reveal-delay-2 {
+  animation-delay: 180ms;
+}
+
+.reveal-delay-3 {
+  animation-delay: 260ms;
+}
+
+.motion-nav-in {
+  animation: navIn 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.motion-drift-xy {
+  animation: driftXY 16s ease-in-out infinite;
+}
+
+.motion-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.motion-float-piece {
+  animation: pieceFloat 6.6s ease-in-out infinite;
+}
+
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -28%;
+  height: 120%;
+  width: 24%;
+  background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+  transform: translateX(-260%) skewX(-16deg);
+  animation: buttonSheen 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes ringRotateReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes orbitDrift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navIn {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes driftXY {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-8px, 8px);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes pieceFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -42%);
+  }
+  50% {
+    transform: translate(-50%, -45%);
+  }
+}
+
+@keyframes buttonSheen {
+  0%,
+  74% {
+    transform: translateX(-260%) skewX(-16deg);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(460%) skewX(-16deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nyx-orbit-shell,
+  .nyx-orbit-ring--outer,
+  .nyx-orbit-ring--middle,
+  .nyx-orbit-ring--inner,
+  .reveal-up,
+  .motion-nav-in,
+  .motion-drift-xy,
+  .motion-float-slow,
+  .motion-float-piece,
+  .btn-sheen::after {
+    animation: none;
+  }
+}

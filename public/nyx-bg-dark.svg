@@ -1,0 +1,50 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1650 730) rotate(145) scale(700 600)">
+      <stop stop-color="#2050FF" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#050507" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 980) rotate(20) scale(760 460)">
+      <stop stop-color="#193BD5" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#050507" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1705 774) rotate(125) scale(360 350)">
+      <stop stop-color="#FAFBFF"/>
+      <stop offset="0.34" stop-color="#C9CFDD"/>
+      <stop offset="0.68" stop-color="#66718A"/>
+      <stop offset="1" stop-color="#111626"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1745 735) rotate(130) scale(430 390)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.43" stop-color="#D8DDE8"/>
+      <stop offset="0.76" stop-color="#647189"/>
+      <stop offset="1" stop-color="#1A2135"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#050507"/>
+  <rect width="1920" height="1080" fill="url(#g1)"/>
+  <rect width="1920" height="1080" fill="url(#g2)"/>
+  <g stroke="#3559FF" stroke-opacity="0.36" fill="none">
+    <circle cx="1480" cy="455" r="300"/>
+    <circle cx="1480" cy="455" r="225" stroke-dasharray="7 8" stroke-opacity="0.45"/>
+    <circle cx="370" cy="410" r="315" stroke-opacity="0.27"/>
+    <circle cx="370" cy="410" r="248" stroke-dasharray="8 9" stroke-opacity="0.3"/>
+    <path d="M1080 875C1200 760 1390 735 1550 790"/>
+    <path d="M122 155C194 102 286 94 364 136"/>
+  </g>
+  <g stroke="#5A78FF" stroke-opacity="0.34">
+    <path d="M318 512H633"/>
+    <path d="M1396 612H1684"/>
+    <path d="M1560 455V286"/>
+    <path d="M1560 612V735"/>
+  </g>
+  <g fill="#2A58FF">
+    <circle cx="633" cy="512" r="4"/>
+    <circle cx="1122" cy="875" r="4"/>
+    <circle cx="1396" cy="612" r="4"/>
+    <circle cx="1684" cy="612" r="4"/>
+  </g>
+  <circle cx="1745" cy="735" r="355" fill="url(#orbB)" opacity="0.94"/>
+  <circle cx="1705" cy="774" r="305" fill="url(#orbA)"/>
+  <ellipse cx="1660" cy="790" rx="190" ry="245" fill="#2247F8" fill-opacity="0.42"/>
+</svg>
